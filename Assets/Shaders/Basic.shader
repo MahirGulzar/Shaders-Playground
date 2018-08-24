@@ -49,7 +49,7 @@
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
-				//// sample the texture
+
 				fixed4 col = tex2D(_MainTex, i.uv);
 			
 			if (abs(i.wpos.y) % 0.2<=0.01)
@@ -60,10 +60,6 @@
 			{
 				col = col * float4(0, 0, 1, 1);
 			}
-			/*if (i.wpos.y < 0)
-			{
-				col = col * _Tint;
-				}*/
 				
 				return col;
 			}
