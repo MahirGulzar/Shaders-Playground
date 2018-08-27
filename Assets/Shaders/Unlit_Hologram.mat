@@ -25,8 +25,9 @@ Material:
     m_Floats:
     - _Amount: 0
     - _Amplitude: 24.54
+    - _CutThresh: 0
     - _Distance: 6.4
     - _Speed: 5.19
-    - _Transparency: 0.25
+    - _Transparency: 0.287
     m_Colors:
     - _Tint: {r: 0.04672481, g: 0.14559051, b: 0.4716981, a: 1}

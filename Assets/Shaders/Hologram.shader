@@ -5,6 +5,7 @@
 		_MainTex ("Texture", 2D) = "white" {}
 		_Tint ("Tint Color",color)= (1,1,1,1)
 		_Transparency("Trans Amount",Range(0.0,0.5)) = 0.25
+		_CutThresh("Cutoff Threshold",Range(0.0,0.5))=0.0
 		_Distance("Distance",float)=1
 		_Amplitude("Amplitude",float)=1
 		_Speed("Speed",float) = 1
@@ -50,6 +51,7 @@
 			float _Speed;
 			float _Amplitude;
 			float _Amount;
+			float _CutThresh;
 			
 			v2f vert (appdata v)
 			{
@@ -68,6 +70,8 @@
 				// apply fog
 				UNITY_APPLY_FOG(i.fogCoord, col);
 				col.a = _Transparency;
+				clip(col.r - _CutThresh);
+				
 				return col;
 			}
 			ENDCG
